@@ -1,0 +1,102 @@
+/* --- Global Variables --- */
+:root {
+    --primary-blue: #1877f2;
+    --hover-blue: #166fe5;
+    --bg-gray: #f0f2f5;
+    --text-main: #1c1e21;
+    --text-secondary: #65676b;
+    --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Base Styles --- */
+body {
+    background-color: var(--bg-gray);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout Components --- */
+main {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Navigation --- */
+nav {
+    background: linear-gradient(90deg, #1877f2 0%, #0a56b6 100%) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* --- Post Cards --- */
+.post-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid #e4e6eb;
+}
+
+.post-card:hover {
+    box-shadow: var(--card-shadow-hover);
+}
+
+/* --- Inputs & Forms --- */
+textarea, input[type="text"], input[type="password"] {
+    border: 1px solid #dddfe2 !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease;
+}
+
+textarea:focus, input:focus {
+    border-color: var(--primary-blue) !important;
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2) !important;
+    background-color: #fff !important;
+}
+
+/* --- Custom Buttons --- */
+.btn-primary {
+    background-color: var(--primary-blue);
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-blue);
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* --- Avatars --- */
+.avatar-gradient {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- Utilities --- */
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 640px) {
+    .post-card {
+        border-radius: 0;
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+}
